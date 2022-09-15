@@ -464,7 +464,7 @@ def main():
             count_offset=dict(type='int', default=1),
             device_ids=dict(type='list', elements='str'),
             facility=dict(),
-            hardware_reservation_id=dict()
+            hardware_reservation_id=dict(),
             features=dict(type='dict'),
             hostnames=dict(type='list', elements='str', aliases=['name']),
             tags=dict(type='list', elements='str'),
