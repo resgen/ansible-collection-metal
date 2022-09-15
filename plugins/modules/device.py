@@ -327,7 +327,7 @@ def create_single_device(module, hostname):
         tags=tags,
         plan=plan,
         facility=facility,
-        hardware_reservation_id,
+        hardware_reservation_id=hardware_reservation_id,
         operating_system=operating_system,
         userdata=user_data,
         locked=locked,
