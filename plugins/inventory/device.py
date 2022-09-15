@@ -267,6 +267,8 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
                     )
             elif key == 'tags':
                 device_vars[key] = value
+            elif key == 'customdata':
+                device_vars[key] = value
             else:
                 pass
 
