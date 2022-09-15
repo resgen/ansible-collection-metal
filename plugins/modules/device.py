@@ -311,6 +311,7 @@ def create_single_device(module, hostname):
     tags = module.params.get('tags')
     user_data = module.params.get('user_data')
     facility = module.params.get('facility')
+    hardware_reservation_id = module.params.get('hardware_reservation_id')
     operating_system = module.params.get('operating_system')
     locked = module.params.get('locked')
     ipxe_script_url = module.params.get('ipxe_script_url')
@@ -326,6 +327,7 @@ def create_single_device(module, hostname):
         tags=tags,
         plan=plan,
         facility=facility,
+        hardware_reservation_id,
         operating_system=operating_system,
         userdata=user_data,
         locked=locked,
@@ -462,6 +464,7 @@ def main():
             count_offset=dict(type='int', default=1),
             device_ids=dict(type='list', elements='str'),
             facility=dict(),
+            hardware_reservation_id=dict()
             features=dict(type='dict'),
             hostnames=dict(type='list', elements='str', aliases=['name']),
             tags=dict(type='list', elements='str'),
