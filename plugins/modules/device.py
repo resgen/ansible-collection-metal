@@ -314,6 +314,7 @@ def create_single_device(module, hostname):
     hardware_reservation_id = module.params.get('hardware_reservation_id')
     operating_system = module.params.get('operating_system')
     locked = module.params.get('locked')
+    customdata = module.params.get('customdata')
     ipxe_script_url = module.params.get('ipxe_script_url')
     always_pxe = module.params.get('always_pxe')
     if operating_system != 'custom_ipxe':
@@ -329,6 +330,7 @@ def create_single_device(module, hostname):
         facility=facility,
         hardware_reservation_id=hardware_reservation_id,
         operating_system=operating_system,
+        customdata=customdata,
         userdata=user_data,
         locked=locked,
         ipxe_script_url=ipxe_script_url,
@@ -465,6 +467,7 @@ def main():
             device_ids=dict(type='list', elements='str'),
             facility=dict(),
             hardware_reservation_id=dict(),
+            customdata=dict(),
             features=dict(type='dict'),
             hostnames=dict(type='list', elements='str', aliases=['name']),
             tags=dict(type='list', elements='str'),
